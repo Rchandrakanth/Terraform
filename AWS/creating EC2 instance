@@ -1,0 +1,14 @@
+provider "aws" {
+    region = "us-east-1"
+}
+
+resource "aws_instance" "example" {
+    ami           = "ami-0b0012dad04xxxxxxx"
+    instance_type = "t2.micro"
+    subnet_id = "subnet-03dcxxxxxxxx"
+    key_name = "mykey1"
+}
+
+terraform init 
+terraform plan 
+terraform apply 
