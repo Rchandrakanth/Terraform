@@ -8,10 +8,10 @@ resource "aws_instance" "web_server" {
 }
 
 resource "aws_eip" "elastic_ip"{
-    domain = "vpc"
+    domain = "vpc"                 --> elastic ip will get from the vpc
 }
 
-resource "aws_eip_association" "eip_assoc"{
+resource "aws_eip_association" "eip_assoc"{             ---> maps the eip to ece2 
     instance_id= aws_instance.web_server.id
     allocation_id= aws_eip.elastic_ip.id
 }
